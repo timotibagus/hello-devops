@@ -1,4 +1,4 @@
-# Timoti exercise #1
+# Timoti exercise 1
 The day one of lear more about DevOps
 
 Dockerize express.js app and use Github Action for CI/CD
@@ -14,4 +14,4 @@ Run the docker image that we've build using
 
 ```bash
 docker run -p 4000:3000 -d hello-devops 
-``
+```
