@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checout@v4
+      
+      - name: Setup node env
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+      
+      - name: Install dependencies
+        run: yarn
+      
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test
