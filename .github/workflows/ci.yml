@@ -1,4 +1,5 @@
 name: ci
+run-name: ${{ github.actor }} is ${{ github.event_name }}
 
 on:
   push:
@@ -9,7 +10,7 @@ on:
       - main
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
 
     steps:
