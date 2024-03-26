@@ -32,6 +32,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: List file
+        run: ls -lah
+      -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
