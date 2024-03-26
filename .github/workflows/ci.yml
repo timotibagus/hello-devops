@@ -1,4 +1,4 @@
-name: ci
+name: Docker Build and Push
 run-name: ${{ github.actor }} is ${{ github.event_name }}
 
 on:
