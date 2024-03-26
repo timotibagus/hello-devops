@@ -33,7 +33,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: List file
-        run: ls -lah ..
+        run: |
+          pwd
+          ls -lah ../hello-devops
       -
         name: Build and push
         uses: docker/build-push-action@v5
