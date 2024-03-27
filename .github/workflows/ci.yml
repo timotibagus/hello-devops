@@ -39,7 +39,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/hello-devops:latest
   
   deploy:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment: production
 
     steps:
