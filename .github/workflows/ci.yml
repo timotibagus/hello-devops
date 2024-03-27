@@ -43,6 +43,9 @@ jobs:
     environment: production
 
     steps:
+      -
+        name: output secret
+        run: echo ${{ secrets.TS_OAUTH_CLIENT_ID }}
       - 
         name: Tailscale
         uses: tailscale/github-action@v2
