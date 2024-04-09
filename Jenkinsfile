@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'ls -lah'
+                sh 'pwd'
             }
         }
     }
