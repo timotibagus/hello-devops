@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'node --version'
-                sh 'ls -lah'
-                sh 'pwd'
+                sh 'docker build -t hello-devops .'
+                sh 'docker run -d hello-devops'
+                sh 'Deploy Completed'
             }
         }
     }
