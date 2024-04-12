@@ -4,8 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'docker build -t hello-devops .'
-                sh 'docker run -d hello-devops'
-                sh 'Deploy Completed'
+                sh 'docker push us-east4-docker.pkg.dev/refined-magpie-418201/my-docker-repo/hello-devops'
             }
         }
     }
