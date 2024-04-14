@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage("List env vars"){
+			steps{
+				sh "printenv | sort"
+			}
+		}
+
+        
         stage('build') {
             steps {
                 sh 'docker build -t hello-devops .'
