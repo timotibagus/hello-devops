@@ -1,5 +1,5 @@
 pipeline {
-    agent 
+    agent any
     
     environment {
         DOCKER_REPO = "us-east4-docker.pkg.dev/refined-magpie-418201/my-docker-repo"
