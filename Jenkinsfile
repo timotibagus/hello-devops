@@ -16,9 +16,9 @@ pipeline {
 
         stage('build') {
             steps {
-                sh 'docker build -t $DOCKER_REPO${JOB_BASE_NAME}:${BUILD_ID} .'
+                sh 'docker build -t $DOCKER_REPO/${JOB_BASE_NAME}:${BUILD_ID} .'
                 sh 'docker images'
-                sh 'docker push $DOCKER_REPO${JOB_BASE_NAME}:${BUILD_ID}'
+                sh 'docker push $DOCKER_REPO/${JOB_BASE_NAME}:${BUILD_ID}'
                 // sh 'docker tag '
                 // sh 'docker push us-east4-docker.pkg.dev/refined-magpie-418201/my-docker-repo/hello-devops'
             }
