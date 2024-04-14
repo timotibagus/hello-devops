@@ -1,8 +1,14 @@
 pipeline {
-    agent any
+    agent 
+    
+    environment {
+        DOCKER_REPO = "us-east4-docker.pkg.dev/refined-magpie-418201/my-docker-repo"
+    }
+
     stages {
         stage("List env vars"){
 			steps{
+                sh "$DOCKER_REPO"
 				sh "printenv | sort"
 			}
 		}
@@ -10,9 +16,9 @@ pipeline {
 
         stage('build') {
             steps {
-                sh 'docker build -t hello-devops .'
+                sh 'docker build -t $DOCKER_REPO${JOB_BASE_NAME}:{BUILD_ID} .'
                 sh 'docker images'
-                sh 'echo ${WORKSPACE}'
+                
                 // sh 'docker tag '
                 // sh 'docker push us-east4-docker.pkg.dev/refined-magpie-418201/my-docker-repo/hello-devops'
             }
