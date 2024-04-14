@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("List env vars"){
 			steps{
-                sh "$DOCKER_REPO"
+                sh "echo $DOCKER_REPO"
 				sh "printenv | sort"
 			}
 		}
